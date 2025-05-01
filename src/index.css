@@ -1,0 +1,116 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 195 100% 97%;
+    --foreground: 195 100% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 195 100% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 195 100% 15%;
+
+    --primary: 196 100% 40%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 185 100% 40%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 195 30% 92%;
+    --muted-foreground: 195 30% 46.9%;
+
+    --accent: 188 100% 40%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 195 10% 85%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 196 100% 40%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 195 100% 10%;
+    --foreground: 195 5% 95%;
+
+    --card: 195 30% 15%;
+    --card-foreground: 195 5% 95%;
+
+    --popover: 195 30% 15%;
+    --popover-foreground: 195 5% 95%;
+
+    --primary: 196 80% 50%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 185 70% 35%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 195 30% 25%;
+    --muted-foreground: 195 10% 70%;
+
+    --accent: 188 80% 35%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 195 30% 25%;
+    --input: 195 30% 25%;
+    --ring: 196 80% 50%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .wave-animation {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .wave-animation::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: wave 8s ease-in-out infinite;
+    z-index: 0;
+  }
+}
